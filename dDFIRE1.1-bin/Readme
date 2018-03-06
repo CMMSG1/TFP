@@ -1,0 +1,29 @@
+#Running:
+bash-3.00$: export DATADIR=""; ./dDFIRE pro.pdb
+pro.pdb: -689.14	 -510.871 -96.3454 -53.5374 -28.3821
+##
+Attn: dDFIRE include 4 terms: one is distance-related only, i.e. DFIRE2; the other 3 are angles related.
+In the above output, -689.14 is the total energy, and the following are DFIRE, and 3 angle-related terms in dDFIRE.
+#
+In default, it's dDFIRE. For distance-only DFIRE part, the potential is sysmmetric.
+"-nosym" option is to set asymmetric DFIRE (aDFIRE)
+"-noag" option is to close the angle related terms
+"-V" DEBUG mode
+# Tips:
+1. The program can be followed with many PDB files. The pdb should include all atoms.
+
+2. The enviornment variable "DATADIR" is used, where two files "amino.dat" and "dfire.1" are read. If not set, the default searching path is the current directory.
+
+3. The program is compiled on X86-linux with Intel C compiler; both 32bit & 64 bit should be ok.
+
+4. dDFIRE_pair has one option "-pair" to print residue-pair interaction energy
+
+#References
+1. Yuedong Yang and Yaoqi Zhou, Specific interactions for  ab initio folding of protein terminal regions with secondary structures. Proteins 72, 793-803 (2008)
+2. Yuedong Yang and Yaoqi Zhou, Ab initio folding of terminal segments with secondary structures reveals the fine difference between two closely-related all-atom statistical energy functions. Protein Science 17 1212-1219, (2008)
+
+
+#****************************************************************************
+**If you have any more questions, please feel free to contact me: yuedong.yang@gmail.com
+
+Last updated on May 13, 2010
