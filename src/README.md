@@ -2,7 +2,7 @@
 - waiting for the input pdbs 
 - In the simulated annealing section, the input pdbs are in targets/T0869/, and the name likes sequence1.pdb, sequence2.pdb ...
 - In the simulated annealing section, the arg of the call-replace-model function is the number of input pdb, so the pdb's name has number.
-- run in Linux: pyhton TFM.py           
+- run in Linux: python TFM.py           
 - ============================中文详细说明================================
 - 缺少输入的pdb文件，pdb文件应该放在targets/TARGETS_NAME/ 下面，例如targets/T0859/,文件夹在程序执行之初会创建好.
 - 同时文件名应该为sequence1.pdb, sequence2.pdb 等， 数字是第几次替换，就是代码中的k
