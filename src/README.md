@@ -2,6 +2,7 @@
 - waiting for the input pdbs 
 - In the simulated annealing section, the input pdbs are in targets/T0869/, and the name likes sequence1.pdb, sequence2.pdb ...
 - In the simulated annealing section, the arg of the call-replace-model function is the number of input pdb, so the pdb's name has number.
+- run in Linux: pyhton TFM.py           
 - ============================中文详细说明================================
 - 缺少输入的pdb文件，pdb文件应该放在targets/TARGETS_NAME/ 下面，例如targets/T0859/,文件夹在程序执行之初会创建好.
 - 同时文件名应该为sequence1.pdb, sequence2.pdb 等， 数字是第几次替换，就是代码中的k
@@ -13,3 +14,4 @@
 生成k个pdb，名字按以上顺序起好，放在指定文件夹中，然后每次退火也行。如果采用第二种，就删除主程序开头cleanup部分。
 - 如果生成的pdb不方便按照以上规则存储建立，可以用 shutil.copy(src, drf) 这个函数来复制文件，两个参数分别是地址文件名，将前一个复制到后一个。比如src= pdb/t0869.pdb, drf= targets/T0869/sequence1.pdb, 就可以按照这个规则复制存储，步骤已经在replaceModel()里面基本实现,只差src。ps：这个函数应该没用错（滑稽脸）
 - 其他部分在代码中的注释都比较详细了，就不翻译成中文了（奸笑）
+- 运行在linux平台: python TFM.py
