@@ -2,7 +2,8 @@
 INPUT_SEQUENCE = 'KMAGSIVISKEVRVPVSTSQFDYLVSRIGDQFHSSDMWIKDEVYLPMEEGGMSFISTESLNSSGLSIFLATVMRARAASQAEESFPLYENVWNQLVEKLRQDARLGVSGNTSLEHHHHHH'
 
 '''directory to store all target files'''
-TARGET_DIR = "targets/"
+#TARGET_DIR = "targets/"
+TARGET_DIR = ""
 
 '''name for files'''
 TARGET_NAME = "T0869"
@@ -21,6 +22,9 @@ def pdb_save_name(pdb_number):
     return TARGET_DIR+TARGET_NAME + "sequence%d" % (pdb_number) +".pdb"
     
 def replaceModel(pdb_number):
+    
+    op = subprocess.check_output("perl fragment2torsion.pl T0869.fragments T0869.random T0869.torsion T0869.out", shell=True)
+    op = subprocess.check_output("perl Angle2pdb.pl T0869-new.out  T0869.pdb  /tools/", shell=True)
     src = ""
     drf = pdb_save_name(pdb_number)
     shutil.copy(src,drf)
